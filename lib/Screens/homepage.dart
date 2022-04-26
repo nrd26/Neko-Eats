@@ -13,23 +13,23 @@ class HomePage extends StatefulWidget {
 
 List arr = [
   ['Veg Burger','assets/burger1.jpg',60,'A delicious burger made with the\nfreshest of ingredients that'
-      ' are \nhandpicked from your local farms',0],
+      ' are \nhandpicked from your local farms',0,1],
   ['Egg Burger','assets/burger1.jpg',80,'A delicious burger made with the\nfreshest of ingredients that'
-      ' are \nhandpicked from your local farms',1],
+      ' are \nhandpicked from your local farms',1,1],
   ['Chicken Burger','assets/burger1.jpg',100,'A delicious burger made with the\nfreshest of ingredients that'
-    ' are \nhandpicked from your local farms',2],
+    ' are \nhandpicked from your local farms',2,1],
   ['Veg Sandwich','assets/burger1.jpg',50,'A delicious burger made with the\nfreshest of ingredients that'
-      ' are \nhandpicked from your local farms',3],
+      ' are \nhandpicked from your local farms',3,1],
   ['Egg Sandwich','assets/burger1.jpg',70,'A delicious burger made with the\nfreshest of ingredients that'
-      ' are \nhandpicked from your local farms',4],
+      ' are \nhandpicked from your local farms',4,1],
   ['Chicken Sandwich','assets/burger1.jpg',90,'A delicious burger made with the\nfreshest of ingredients that'
-      ' are \nhandpicked from your local farms',5],
+      ' are \nhandpicked from your local farms',5,1],
   ['Coca Cola','assets/burger1.jpg',20,'A delicious burger made with the\nfreshest of ingredients that'
-      ' are \nhandpicked from your local farms',6],
+      ' are \nhandpicked from your local farms',6,1],
   ['Sprite','assets/burger1.jpg',20,'A delicious burger made with the\nfreshest of ingredients that'
-      ' are \nhandpicked from your local farms',7],
+      ' are \nhandpicked from your local farms',7,1],
   ['Tiramisu','assets/burger1.jpg',80,'A delicious burger made with the\nfreshest of ingredients that'
-      ' are \nhandpicked from your local farms',8],
+      ' are \nhandpicked from your local farms',8,1],
 ];
 
 List cart = [];

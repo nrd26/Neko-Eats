@@ -11,14 +11,6 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-  // int totalPrice = 300;
-  // int i=0;
-  // void totalprice(){
-  //   for(i=0;i<cart.length;i++){
-  //     // cart[i][]
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +25,8 @@ class _CartState extends State<Cart> {
                   return CartItem(
                     name: cart[index][0],
                     pic: cart[index][1],
-                    price: cart[index][2]);
+                    price: cart[index][2],
+                  quantity: cart[index][5],);
 
                 }
           ),

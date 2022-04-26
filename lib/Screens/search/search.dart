@@ -1,3 +1,4 @@
+import 'package:app_prakyath/Screens/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:paginated_search_bar/paginated_search_bar.dart';
 import 'package:endless/endless.dart';
@@ -15,14 +16,14 @@ class ExampleItemPager {
   final int pageSize;
 
   ExampleItemPager({
-    this.pageSize = 20,
+    this.pageSize = 8,
   });
 
   List<ExampleItem> nextBatch() {
     List<ExampleItem> batch = [];
 
     for (int i = 0; i < pageSize; i++) {
-      batch.add(ExampleItem(title: 'Item ${pageIndex * pageSize + i}'));
+      batch.add(ExampleItem(title: arr[i][0]));
     }
 
     pageIndex += 1;

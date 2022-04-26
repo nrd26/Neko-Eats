@@ -2,25 +2,25 @@ import 'package:app_prakyath/Services/cart.dart';
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
-  const Counter({Key? key}) : super(key: key);
-
+  var quantity;
+  Counter({required this.quantity});
   @override
   _CounterState createState() => _CounterState();
 }
 
 class _CounterState extends State<Counter> {
-  int _n = 1;
+  int n = 1;
   void add() {
     setState(() {
-      _n++;
-      lengthPlus();
+      n++;
+      // lengthPlus();
     });
   }
   void minus() {
     setState(() {
-      if (_n != 0)
-        lengthMinus();
-        _n--;
+      if (n != 0)
+        // lengthMinus();
+        n--;
     });
   }
   @override
@@ -43,7 +43,7 @@ class _CounterState extends State<Counter> {
 
               Padding(
                 padding: const EdgeInsets.only(left: 15,right: 15),
-                child: Text('$_n',
+                child: Text('$n',
                     style: const TextStyle(fontSize: 18.0)),
               ),
               Container(

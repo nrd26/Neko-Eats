@@ -7,7 +7,8 @@ class CartItem extends StatefulWidget {
   var name;
   var pic;
   var price;
-  CartItem({required this.name, required this.pic, required this.price});
+  var quantity;
+  CartItem({required this.name, required this.pic, required this.price, required this.quantity});
 
   @override
   _CartItemState createState() => _CartItemState();
@@ -45,7 +46,7 @@ class _CartItemState extends State<CartItem> {
               fontWeight: FontWeight.bold
             ),),
           ),
-          // subtitle: Counter(),
+          subtitle: Counter(quantity: widget.quantity,),
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(30),
             child: const Image(image: AssetImage('assets/burger1.jpg'),
