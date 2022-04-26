@@ -26,7 +26,7 @@ class _CartState extends State<Cart> {
                     name: cart[index][0],
                     pic: cart[index][1],
                     price: cart[index][2],
-                  quantity: cart[index][5],);
+                  index: cart[index][4],);
 
                 }
           ),

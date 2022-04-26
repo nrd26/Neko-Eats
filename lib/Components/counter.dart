@@ -1,26 +1,34 @@
+import 'package:app_prakyath/Screens/homepage.dart';
 import 'package:app_prakyath/Services/cart.dart';
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
-  var quantity;
-  Counter({required this.quantity});
+  var index;
+  Counter({required this.index});
   @override
   _CounterState createState() => _CounterState();
 }
 
 class _CounterState extends State<Counter> {
-  int n = 1;
+  // int n = 1;
   void add() {
     setState(() {
-      n++;
+      // n++;
+      cart[widget.index][5] += 1;
+      total = total + cart[widget.index][2];
+      print(cart[widget.index][5]);
       // lengthPlus();
     });
   }
   void minus() {
     setState(() {
-      if (n != 0)
-        // lengthMinus();
-        n--;
+      if ( cart[widget.index][5]!= 0) {
+        cart[widget.index][5]--;
+      }
+      else if( cart[widget.index][5] == 0){
+        cart.removeAt(widget.index);
+      }
+      total = total - cart[widget.index][2];
     });
   }
   @override
@@ -43,7 +51,7 @@ class _CounterState extends State<Counter> {
 
               Padding(
                 padding: const EdgeInsets.only(left: 15,right: 15),
-                child: Text('$n',
+                child: Text('${cart[widget.index][5]}',
                     style: const TextStyle(fontSize: 18.0)),
               ),
               Container(
