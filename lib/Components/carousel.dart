@@ -10,26 +10,26 @@ class Carousel extends StatelessWidget {
             // margin: EdgeInsets.all(6.0),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
-                image: DecorationImage(
+                image: const DecorationImage(
                     image: AssetImage('assets/ad1.jpg')
                 )
             ),
           ),
           Container(
-            margin: EdgeInsets.all(6.0),
+            margin: const EdgeInsets.all(6.0),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
-                image: DecorationImage(
+                image: const DecorationImage(
                     image: AssetImage('assets/ad2.jpg')
                 )
             ),
           ),
 
           Container(
-            margin: EdgeInsets.all(6.0),
+            margin: const EdgeInsets.all(6.0),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
-                image: DecorationImage(
+                image: const DecorationImage(
                     image: AssetImage('assets/ad4.jpg')
                 )
             ),
@@ -45,7 +45,7 @@ class Carousel extends StatelessWidget {
           aspectRatio: 16 / 9,
           autoPlayCurve: Curves.fastOutSlowIn,
           enableInfiniteScroll: true,
-          autoPlayAnimationDuration: Duration(milliseconds: 800),
+          autoPlayAnimationDuration: const Duration(milliseconds: 800),
           viewportFraction: 0.8,
         )
     );

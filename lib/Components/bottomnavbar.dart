@@ -1,3 +1,5 @@
+import 'package:app_prakyath/Screens/cart/cart.dart';
+import 'package:app_prakyath/Services/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
@@ -12,8 +14,10 @@ class BottomNavBar extends StatefulWidget {
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
+
+
 class _BottomNavBarState extends State<BottomNavBar> {
-  int cartcount = 4;
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +40,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
             gap: 8,
             activeColor: Colors.black,
             iconSize: 24,
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            duration: Duration(milliseconds: 400),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            duration: const Duration(milliseconds: 400),
             tabBackgroundColor: Colors.grey[100]!,
             color: Colors.black,
             tabs: [
@@ -57,7 +61,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   elevation: 0,
                   position: BadgePosition.topEnd(top: -12, end: -12),
                   badgeContent: Text(
-                    cartcount.toString(),
+                    length.toString(),
                     style: TextStyle(color: Colors.red.shade900),
                   ),
                   child: const Icon(

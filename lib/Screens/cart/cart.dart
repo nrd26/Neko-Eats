@@ -1,4 +1,6 @@
 import 'package:app_prakyath/Components/cart_item.dart';
+import 'package:app_prakyath/Screens/homepage.dart';
+import 'package:app_prakyath/Services/cart.dart';
 import 'package:flutter/material.dart';
 
 class Cart extends StatefulWidget {
@@ -14,56 +16,70 @@ class _CartState extends State<Cart> {
     return Container(
       child: ListView(
         children:[
-          Padding(
-            padding: const EdgeInsets.fromLTRB(15, 5, 15, 0),
-            child: Container(
-              height: MediaQuery. of(context). size. height/1.7,
-              child:ListView(
-                  physics: BouncingScrollPhysics(),
-                  children: [
-                    CartItem(),
-                    SizedBox(height: 15,),
-                    CartItem(),
-                    SizedBox(height: 15,),
-                    CartItem(),
-                    SizedBox(height: 15,),
-                    CartItem(),
-                  ]
-              ),
+          Container(
+            height: MediaQuery. of(context). size. height/1.6,
+            child:ListView.builder(
+                physics: BouncingScrollPhysics(),
+                itemCount: arr.length,
+                itemBuilder: (BuildContext context,int index){
+                  return CartItem(name: arr[0][0],pic: arr[0][1],price: arr[0][2],desc: arr[0][3],);
+                }
+                // children: [
+                //   CartItem(),
+                //   CartItem(),
+                //   CartItem(),
+                //   CartItem(),
+                // ]
             ),
           ),
-          Center(child: Text('Total: \$ 23.92',
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold
-          ),
-          )),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 60,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: TextButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.black),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    // side: BorderSide(color: Colors.red)
-                    ),)
+          Container(
+            height: MediaQuery. of(context). size. height/0.3,
+            // color: Colors.black12,
+            padding: EdgeInsets.only(top: 20),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: Colors.grey[200],
+              // border: Border.all(color: Colors.black)
+            ),
+            child: ListView(
+
+              children:[
+                Center(child: Text('Total: \$ 23.92',
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold
                   ),
-                  child: Text(
-                    'Proceed to Checkout',
-                    style: TextStyle(
-                        color: Colors.white
+                )),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 60,
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: TextButton(
+                        style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(Colors.black),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                                // side: BorderSide(color: Colors.red)
+                              ),)
+                        ),
+                        child: Text(
+                          'Proceed to Checkout',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
+                        onPressed: (){
+
+                        }
                     ),
                   ),
-                  onPressed: (){
-
-                  }
-              ),
+                ),
+            ],
             ),
           ),
+
         ],
       ),
     );

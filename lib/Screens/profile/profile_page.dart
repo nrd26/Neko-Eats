@@ -58,7 +58,9 @@ class Profile extends StatelessWidget {
           ProfileItem(
             text: 'Log Out',
             icon: Icons.logout_rounded,
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pop();
+            },
           ),
         ],
     );

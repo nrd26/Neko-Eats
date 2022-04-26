@@ -29,10 +29,20 @@ class _ControlState extends State<Control> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0.0,
+        leading: Icon(Icons.feedback_outlined),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         title: const Text('Neko Eats'),
         centerTitle: true,
+        // shape: RoundedRectangleBorder(
+        //   side: BorderSide(
+        //     color: Colors.black12
+        //   ),
+        //   borderRadius: BorderRadius.only(
+        //     bottomLeft: Radius.circular(30.0),
+        //     bottomRight: Radius.circular(30.0),
+        //   ),
+        // ),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

@@ -21,16 +21,16 @@ class CategoryItem extends StatelessWidget {
             Text(
               title,
               style: isActive
-                  ? TextStyle(
+                  ? const TextStyle(
                   color: Colors.red,
                   fontWeight: FontWeight.bold,
                   fontSize: 18
               )
-                  : TextStyle(fontSize: 16),
+                  : const TextStyle(fontSize: 16),
             ),
             if (isActive)
               Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
+                margin: const EdgeInsets.symmetric(vertical: 5),
                 height: 3,
                 width: 62,
                 decoration: BoxDecoration(

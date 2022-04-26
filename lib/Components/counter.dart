@@ -1,3 +1,4 @@
+import 'package:app_prakyath/Services/cart.dart';
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
@@ -8,15 +9,17 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  int _n = 0;
+  int _n = 1;
   void add() {
     setState(() {
       _n++;
+      lengthPlus();
     });
   }
   void minus() {
     setState(() {
       if (_n != 0)
+        lengthMinus();
         _n--;
     });
   }
