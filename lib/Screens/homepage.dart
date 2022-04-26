@@ -11,10 +11,31 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-var arr = [
-  ['Chicken Burger','assets/burger1.jpg','100','A delicious burger made with the\nfreshest of ingredients that'
-    ' are \nhandpicked from your local farms']
+List arr = [
+  ['Veg Burger','assets/burger1.jpg',60,'A delicious burger made with the\nfreshest of ingredients that'
+      ' are \nhandpicked from your local farms',0],
+  ['Egg Burger','assets/burger1.jpg',80,'A delicious burger made with the\nfreshest of ingredients that'
+      ' are \nhandpicked from your local farms',1],
+  ['Chicken Burger','assets/burger1.jpg',100,'A delicious burger made with the\nfreshest of ingredients that'
+    ' are \nhandpicked from your local farms',2],
+  ['Veg Sandwich','assets/burger1.jpg',50,'A delicious burger made with the\nfreshest of ingredients that'
+      ' are \nhandpicked from your local farms',3],
+  ['Egg Sandwich','assets/burger1.jpg',70,'A delicious burger made with the\nfreshest of ingredients that'
+      ' are \nhandpicked from your local farms',4],
+  ['Chicken Sandwich','assets/burger1.jpg',90,'A delicious burger made with the\nfreshest of ingredients that'
+      ' are \nhandpicked from your local farms',5],
+  ['Coca Cola','assets/burger1.jpg',20,'A delicious burger made with the\nfreshest of ingredients that'
+      ' are \nhandpicked from your local farms',6],
+  ['Sprite','assets/burger1.jpg',20,'A delicious burger made with the\nfreshest of ingredients that'
+      ' are \nhandpicked from your local farms',7],
+  ['Tiramisu','assets/burger1.jpg',80,'A delicious burger made with the\nfreshest of ingredients that'
+      ' are \nhandpicked from your local farms',8],
 ];
+
+List cart = [];
+
+num total = 0;
+
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin{
   late TabController _tabController;
   @override
@@ -41,7 +62,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       borderSide: BorderSide(color: Colors.red, width: 2),
                       insets: EdgeInsets.symmetric(horizontal: 28),
                     ),
-                tabs: [
+                tabs: const [
                   Tab(text: 'Burgers',),
                   Tab(text: 'Sandwiches'),
                   Tab(text: 'Beverages'),
@@ -54,29 +75,57 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             Expanded(
               child: TabBarView(
                 children: [
-                  ListView(
-                    children: [
-                      FoodItem(name: arr[0][0],pic: arr[0][1],price: arr[0][2],desc: arr[0][3],),
-                      // FoodItem(arr[0])
-                    ],
+                  ListView.builder(
+                      physics: BouncingScrollPhysics(),
+                      itemCount: 3,
+                      itemBuilder: (BuildContext context,int index) {
+                        return FoodItem(
+                          name: arr[index][0],
+                          pic: arr[index][1],
+                          price: arr[index][2],
+                          desc: arr[index][3],
+                          index: arr[index][4],);
+
+                      }
                   ),
-                  ListView(
-                    children: [
-                      // FoodItem(arr[0]),
-                      // FoodItem(arr[0])
-                    ],
+                  ListView.builder(
+                      physics: BouncingScrollPhysics(),
+                      itemCount: 3,
+                      itemBuilder: (BuildContext context,int index) {
+                        return FoodItem(
+                            name: arr[index+3][0],
+                            pic: arr[index+3][1],
+                            price: arr[index+3][2],
+                        desc: arr[index+3][3],
+                        index: arr[index+3][4],);
+
+                      }
                   ),
-                  ListView(
-                    children: [
-                      // FoodItem(arr[0]),
-                      // FoodItem(arr[0])
-                    ],
+                  ListView.builder(
+                      physics: BouncingScrollPhysics(),
+                      itemCount: 2,
+                      itemBuilder: (BuildContext context,int index) {
+                        return FoodItem(
+                          name: arr[index+6][0],
+                          pic: arr[index+6][1],
+                          price: arr[index+6][2],
+                          desc: arr[index+6][3],
+                          index: arr[index+6][4],);
+
+                      }
                   ),
-                  ListView(
-                    children: [
-                      // FoodItem(arr[0]),
-                      // FoodItem(arr[0])
-                    ],
+                  ListView.builder(
+                      physics: BouncingScrollPhysics(),
+                      itemCount: 1,
+                      itemBuilder: (BuildContext context,int index) {
+                        return FoodItem(
+                          name: arr[index+8][0],
+                          pic: arr[index+8][1],
+                          price: arr[index+8][2],
+                          desc: arr[index+8][3],
+                          index: arr[index+8][4],);
+
+                      }
                   ),
                 ],
                 controller: _tabController,

@@ -1,5 +1,6 @@
 import 'package:app_prakyath/Components/bottomnavbar.dart';
 import 'package:app_prakyath/Screens/cart/cart.dart';
+import 'package:app_prakyath/Screens/homepage.dart';
 import 'package:app_prakyath/Services/cart.dart';
 import 'package:flutter/material.dart';
 
@@ -7,8 +8,9 @@ class FoodItem extends StatefulWidget {
   var name;
   var pic;
   var price;
-  var desc = '';
-  FoodItem({required this.name, required this.pic, required this.price, required this.desc});
+  var desc;
+  var index;
+  FoodItem({required this.name, required this.pic, required this.price, required this.desc, required this.index});
 
   @override
   _FoodItemState createState() => _FoodItemState();
@@ -25,8 +27,8 @@ class _FoodItemState extends State<FoodItem> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(30),
-            boxShadow: [
-              const BoxShadow(
+            boxShadow: const [
+              BoxShadow(
                 color: Colors.black12,
                 offset: Offset(
                   5.0,
@@ -45,7 +47,7 @@ class _FoodItemState extends State<FoodItem> {
 
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20),
-                    child: const Image(image: AssetImage('assets/burger1.jpg'),
+                    child: Image(image: AssetImage(widget.pic),
                       height: 90,
                       width: 90,),
                   ),
@@ -68,6 +70,8 @@ class _FoodItemState extends State<FoodItem> {
                       onPressed: (){
                         setState(() {
                           lengthPlus();
+                          total = total+arr[widget.index][2];
+                          cart.add(arr[widget.index]);
                         });
 
                       }
@@ -82,15 +86,15 @@ class _FoodItemState extends State<FoodItem> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('Chicken Burger',
-                    style: TextStyle(
+                    Text(widget.name.toString(),
+                    style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                       fontSize: 20
                     ),),
                     const SizedBox(height: 10,),
-                    const Text('Rs.100',
-                      style: TextStyle(
+                    Text('Rs.${widget.price.toString()}',
+                      style: const TextStyle(
                           fontWeight: FontWeight.normal,
                           color: Colors.black
                       ),),

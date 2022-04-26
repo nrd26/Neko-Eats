@@ -11,6 +11,14 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
+  // int totalPrice = 300;
+  // int i=0;
+  // void totalprice(){
+  //   for(i=0;i<cart.length;i++){
+  //     // cart[i][]
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,17 +28,15 @@ class _CartState extends State<Cart> {
             height: MediaQuery. of(context). size. height/1.6,
             child:ListView.builder(
                 physics: BouncingScrollPhysics(),
-                itemCount: arr.length,
-                itemBuilder: (BuildContext context,int index){
-                  return CartItem(name: arr[0][0],pic: arr[0][1],price: arr[0][2],desc: arr[0][3],);
+                itemCount: cart.length,
+                itemBuilder: (BuildContext context,int index) {
+                  return CartItem(
+                    name: cart[index][0],
+                    pic: cart[index][1],
+                    price: cart[index][2]);
+
                 }
-                // children: [
-                //   CartItem(),
-                //   CartItem(),
-                //   CartItem(),
-                //   CartItem(),
-                // ]
-            ),
+          ),
           ),
           Container(
             height: MediaQuery. of(context). size. height/0.3,
@@ -44,7 +50,7 @@ class _CartState extends State<Cart> {
             child: ListView(
 
               children:[
-                Center(child: Text('Total: \$ 23.92',
+                Center(child: Text('Total: Rs.${total}',
                   style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold

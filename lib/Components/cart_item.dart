@@ -7,16 +7,14 @@ class CartItem extends StatefulWidget {
   var name;
   var pic;
   var price;
-  var desc = '';
-  CartItem({required this.name, required this.pic, required this.price, required this.desc});
+  CartItem({required this.name, required this.pic, required this.price});
 
   @override
   _CartItemState createState() => _CartItemState();
 }
 
 class _CartItemState extends State<CartItem> {
-  double price = 2.99;
-  int quantity = 2;
+  int quantity = 1;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -40,23 +38,26 @@ class _CartItemState extends State<CartItem> {
         ),
         child: ListTile(
           contentPadding: const EdgeInsets.fromLTRB(10, 15, 20, 15),
-          title: const Padding(
-            padding: EdgeInsets.only(bottom: 10),
-            child: const Text('Chicken Burger',
-            style: TextStyle(
+          title: Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Text(widget.name.toString(),
+            style: const TextStyle(
               fontWeight: FontWeight.bold
             ),),
           ),
-          subtitle: const Counter(),
+          // subtitle: Counter(),
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(30),
             child: const Image(image: AssetImage('assets/burger1.jpg'),
               height: 90,
               width: 90,),
           ),
-          trailing: Text('\$${price*quantity}',
-            style: const TextStyle(
-              fontSize: 16
+          trailing: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text('Rs.${widget.price.toString()}',
+              style: const TextStyle(
+                fontSize: 16
+              ),
             ),
           ),
         ),

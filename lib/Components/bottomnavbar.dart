@@ -1,4 +1,5 @@
 import 'package:app_prakyath/Screens/cart/cart.dart';
+import 'package:app_prakyath/Screens/homepage.dart';
 import 'package:app_prakyath/Services/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -61,7 +62,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   elevation: 0,
                   position: BadgePosition.topEnd(top: -12, end: -12),
                   badgeContent: Text(
-                    length.toString(),
+                    cart.length.toString(),
                     style: TextStyle(color: Colors.red.shade900),
                   ),
                   child: const Icon(
