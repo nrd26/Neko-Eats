@@ -18,17 +18,17 @@ List arr = [
       ' are \nhandpicked from your local farms',1,1],
   ['Chicken Burger','assets/burger1.jpg',100,'A delicious burger made with the\nfreshest of ingredients that'
     ' are \nhandpicked from your local farms',2,1],
-  ['Veg Sandwich','assets/burger1.jpg',50,'A delicious burger made with the\nfreshest of ingredients that'
+  ['Veg Sandwich','assets/sandwich.jpg',50,'A delicious burger made with the\nfreshest of ingredients that'
       ' are \nhandpicked from your local farms',3,1],
-  ['Egg Sandwich','assets/burger1.jpg',70,'A delicious burger made with the\nfreshest of ingredients that'
+  ['Egg Sandwich','assets/sandwich.jpg',70,'A delicious burger made with the\nfreshest of ingredients that'
       ' are \nhandpicked from your local farms',4,1],
-  ['Chicken Sandwich','assets/burger1.jpg',90,'A delicious burger made with the\nfreshest of ingredients that'
+  ['Chicken Sandwich','assets/sandwich.jpg',90,'A delicious burger made with the\nfreshest of ingredients that'
       ' are \nhandpicked from your local farms',5,1],
-  ['Coca Cola','assets/burger1.jpg',20,'A delicious burger made with the\nfreshest of ingredients that'
+  ['Coca Cola','assets/coke.jpg',20,'A delicious burger made with the\nfreshest of ingredients that'
       ' are \nhandpicked from your local farms',6,1],
-  ['Sprite','assets/burger1.jpg',20,'A delicious burger made with the\nfreshest of ingredients that'
+  ['Sprite','assets/sprite.jpg',20,'A delicious burger made with the\nfreshest of ingredients that'
       ' are \nhandpicked from your local farms',7,1],
-  ['Tiramisu','assets/burger1.jpg',80,'A delicious burger made with the\nfreshest of ingredients that'
+  ['Tiramisu','assets/tiramisu.jpg',80,'A delicious burger made with the\nfreshest of ingredients that'
       ' are \nhandpicked from your local farms',8,1],
 ];
 

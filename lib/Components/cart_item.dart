@@ -68,43 +68,43 @@ class _CartItemState extends State<CartItem> {
               fontWeight: FontWeight.bold
             ),),
           ),
-          subtitle: Container(
-            padding: EdgeInsets.only(top: 10),
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    height: 25,
-                    width: 25,
-                    child: FloatingActionButton(
-                      mini: true,
-                      onPressed: add,
-                      child: const Icon(Icons.add, size:20,color: Colors.black,),
-                      backgroundColor: Colors.white,),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15,right: 15),
-                    child: Text('${cart[widget.index][5]}',
-                        style: const TextStyle(fontSize: 18.0)),
-                  ),
-                  Container(
-                    height: 25,
-                    width: 25,
-                    child: FloatingActionButton(
-                      onPressed: minus,
-                      child: const Icon(Icons.remove, size:20,color: Colors.black,),
-                      backgroundColor: Colors.white,),
-                  ),
-
-                ],
-              ),
-            ),
-          ),
+          // subtitle: Container(
+          //   padding: EdgeInsets.only(top: 10),
+          //   child: Center(
+          //     child: Row(
+          //       mainAxisAlignment: MainAxisAlignment.start,
+          //       children: <Widget>[
+          //         Container(
+          //           height: 25,
+          //           width: 25,
+          //           child: FloatingActionButton(
+          //             mini: true,
+          //             onPressed: add,
+          //             child: const Icon(Icons.add, size:20,color: Colors.black,),
+          //             backgroundColor: Colors.white,),
+          //         ),
+          //
+          //         Padding(
+          //           padding: const EdgeInsets.only(left: 15,right: 15),
+          //           child: Text('${cart[widget.index][5]}',
+          //               style: const TextStyle(fontSize: 18.0)),
+          //         ),
+          //         Container(
+          //           height: 25,
+          //           width: 25,
+          //           child: FloatingActionButton(
+          //             onPressed: minus,
+          //             child: const Icon(Icons.remove, size:20,color: Colors.black,),
+          //             backgroundColor: Colors.white,),
+          //         ),
+          //
+          //       ],
+          //     ),
+          //   ),
+          // ),
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(30),
-            child: const Image(image: AssetImage('assets/burger1.jpg'),
+            child: Image(image: AssetImage(widget.pic),
               height: 90,
               width: 90,),
           ),

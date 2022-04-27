@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home:
-      // Splash()
-      Control(),
+      Splash()
+      // Control(),
     );
   }
 }
